@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "1d279ec3-47ad-4573-be00-c33c7ae05cfa",
+		"name": "Movie Booking System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3728369"
+	},
+	"item": [
+		{
+			"name": "Login Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"adminuser@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/register",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Movie to a city",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4NDZlYzU0NTQwMjZhZWY2YzFlNWIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY2NDE4ODc4MCwiaWF0IjoxNjYzNTgzOTgwfQ.WxzhWiUU6O3CrlMjLPRurSyFQyH2b3Ppc-B26p71nZM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"6328229abae08ad3e7fe430d\",\r\n    \"movie\": \"632823d2c78412302d0efdc9\",\r\n    \"date\":\"Mon Sep 19 2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/add-movie",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"add-movie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create booking",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjA2ZTcyNzI4MzJkZTkxYWI5MGUiLCJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTY2NDE3ODk2OCwiaWF0IjoxNjYzNTc0MTY4fQ.x82LGsGqwTxa8gz9CsEdaOJOlS6tMGEbWQmxiwudbQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"6328229abae08ad3e7fe430d\",\r\n    \"movie\": \"632823d2c78412302d0efdc8\",\r\n    \"time\": \"12pm\",\r\n    \"date\": \"Mon Sep 19 2022\",\r\n    \"seat\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/booking/create",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking By Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjA2ZTcyNzI4MzJkZTkxYWI5MGUiLCJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTY2NDE3ODk2OCwiaWF0IjoxNjYzNTc0MTY4fQ.x82LGsGqwTxa8gz9CsEdaOJOlS6tMGEbWQmxiwudbQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"city\": \"6328229abae08ad3e7fe430d\",\r\n    \"movie\": \"632823d2c78412302d0efdc8\",\r\n    \"time\": \"12pm\",\r\n    \"date\": \"Mon Sep 19 2022\",\r\n    \"seat\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/booking/63282937185a752630d6f5b9",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						"63282937185a752630d6f5b9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cities",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4NDUxMmFkNDk4MWZmYWRmMTlkNmYiLCJlbWFpbCI6ImFkbWludXNlckBnbWFpbC5jb20iLCJleHAiOjE2NjQxODg3MjUsImlhdCI6MTY2MzU4MzkyNX0.NEE22AhaROm6Ybaxwikw9nulDJYdEsQjZgRYdXDSjD8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/cities",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies by City Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4NDZlYzU0NTQwMjZhZWY2YzFlNWIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY2NDE4ODc4MCwiaWF0IjoxNjYzNTgzOTgwfQ.WxzhWiUU6O3CrlMjLPRurSyFQyH2b3Ppc-B26p71nZM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/movies-by-city/6328229abae08ad3e7fe430d",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies-by-city",
+						"6328229abae08ad3e7fe430d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bookings by date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4NDZlYzU0NTQwMjZhZWY2YzFlNWIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTY2NDE4ODc4MCwiaWF0IjoxNjYzNTgzOTgwfQ.WxzhWiUU6O3CrlMjLPRurSyFQyH2b3Ppc-B26p71nZM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/bookings-by-date/2022-09-18T18:30:00.000Z",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"bookings-by-date",
+						"2022-09-18T18:30:00.000Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Movies List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MjA2ZTcyNzI4MzJkZTkxYWI5MGUiLCJlbWFpbCI6InRlc3R1c2VyQGdtYWlsLmNvbSIsImV4cCI6MTY2NDE3ODk2OCwiaWF0IjoxNjYzNTc0MTY4fQ.x82LGsGqwTxa8gz9CsEdaOJOlS6tMGEbWQmxiwudbQc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.1.35:3000/api/movies",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"1",
+						"35"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
